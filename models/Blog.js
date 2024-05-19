@@ -21,19 +21,19 @@ Blog.init(
       allowNull: false,
     },
     content: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     username: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-  user_id: {
-        type: DataTypes.INTEGER,
-        references: {
-          model: "user",
-          key: "id"
-        }
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "user",
+        key: "id"
+      }
     }
   },
   {
