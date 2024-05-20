@@ -24,13 +24,20 @@ Comment.init(
         type: DataTypes.STRING,
         allowNull: false,
       },
-    blog_id: {
+    post_id: {
         type: DataTypes.INTEGER,
         references: {
-          model: "blog",
+          model: "post",
           key: "id"
         }
-    }
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "user",
+        key: "id"
+      }
+  }
   },
   {
     sequelize,
