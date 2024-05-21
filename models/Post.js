@@ -18,6 +18,7 @@ Post.init(
     },
     dateCreation: {
       type: DataTypes.DATE,
+      defaultValue: DataTypes.NOW,
       allowNull: false,
     },
     content: {

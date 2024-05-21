@@ -1,0 +1,32 @@
+[
+    {
+        "username": "Sal",
+        "title": "My first post",
+        "content": "blah",
+        "user_id": 2
+    },
+    {
+        "username": "Lernantino",
+        "title": "My first post",
+        "content": "blah",
+        "user_id": 4
+    },
+    {
+        "username": "Amiko",
+        "title": "My first post",
+        "content": "blah",
+        "user_id": 1
+    },
+    {
+        "username": "Jordan",
+        "title": "My first post",
+        "content": "blah",
+        "user_id": 3
+    },
+    {
+        "username": "Blake",
+        "title": "My first post",
+        "content": "blah",
+        "user_id": 5
+    }
+]
