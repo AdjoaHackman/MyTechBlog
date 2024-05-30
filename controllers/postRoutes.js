@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { Post, User, Comment } = require('./index');
-const withAuth = require('../../utils/auth');
+const withAuth = require('../utils/helpers');
 
 // Create a new post
 router.post('/', withAuth, async (req, res) => {
