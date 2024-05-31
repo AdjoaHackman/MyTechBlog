@@ -17,4 +17,21 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/post/:id', async (req, res) => {
+  try {
+    // Get all users, sorted by name
+    const postData = await Post.findByPk(req.params.id);
+
+    // Serialize user data so templates can read it
+    const post = postData.get({
+      plain:true
+    })
+    console.log(post)
+    // Pass serialized data into Handlebars.js template
+    res.render('post', { post });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;

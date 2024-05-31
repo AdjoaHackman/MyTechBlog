@@ -22,7 +22,7 @@ Post.init(
       allowNull: false,
     },
     content: {
-      type: DataTypes.STRING(1000),
+      type: DataTypes.STRING(5000),
       allowNull: false,
     },
     username: {
