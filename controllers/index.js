@@ -5,9 +5,11 @@ const postRoutes = require('./postRoutes');
 const commentRoutes = require('./commentRoutes')
 
 router.use('/', homeRoutes);
+router.use('login', userRoutes);
+router.use('logout', userRoutes);
 router.use('/user', userRoutes);
 router.use('/post',postRoutes);
 router.use('/comment',commentRoutes);
-router.use('/dashboard', homeRoutes, postRoutes)
+router.use('/dashboard', homeRoutes, postRoutes);
 
 module.exports = router;
