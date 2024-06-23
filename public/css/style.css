@@ -1,7 +1,10 @@
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
 header {
@@ -11,23 +14,33 @@ header {
     text-align: center;
 }
 
-nav ul {
+header nav ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
-nav ul li {
+header nav ul li {
     display: inline;
     margin: 0 1em;
 }
 
-nav ul li a {
+header nav ul li a {
     color: #fff;
     text-decoration: none;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
 }
 
 main {
-    padding: 2em;
+    max-width: 800px;
+    margin: 2em auto;
+    padding: 1em;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 footer {
@@ -44,8 +57,33 @@ article {
     margin-bottom: 2em;
 }
 
-.comment {
-    margin-left: 2em;
+article h2 {
+    color: #007BFF;
+}
+
+article p {
+    line-height: 1.6;
+}
+
+article p small {
+    color: #666;
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 0.5em 1em;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:focus {
+    outline: none;
 }
 
 form {
@@ -61,9 +99,92 @@ form input, form textarea {
     width: 100%;
     padding: 0.5em;
     margin-top: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 
-form button {
+form input[type="submit"], form button {
+    width: auto;
     margin-top: 1em;
+}
+
+/* Home Page Specific */
+.home-welcome {
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+/* Dashboard Page Specific */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2em;
+}
+
+.dashboard-header button {
+    margin: 0;
+}
+
+.dashboard-post {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+}
+
+/* Post Page Specific */
+.post-comments {
+    margin-top: 2em;
+}
+
+.post-comments h2 {
+    margin-bottom: 1em;
+}
+
+.post-comments .comment {
+    border-top: 1px solid #ccc;
+    padding-top: 1em;
+    margin-top: 1em;
+}
+
+.post-comments .comment p small {
+    color: #666;
+}
+
+/* Form Styles */
+form .form-group {
+    margin-bottom: 1em;
+}
+
+form .form-group label {
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+form .form-group input, form .form-group textarea {
+    width: 100%;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form .form-group input[type="submit"] {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
     padding: 0.5em 1em;
+    cursor: pointer;
+}
+
+form .form-group input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Media Queries */
+@media (max-width: 600px) {
+    header nav ul li {
+        display: block;
+        margin: 0.5em 0;
+    }
 }
