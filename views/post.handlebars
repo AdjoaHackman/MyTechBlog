@@ -8,9 +8,9 @@
 <h2>Comments</h2>
 {{#if comments.length}}
     {{#each comments}}
-        {{> comment}}
+        {{ comment}}
     {{/each}}
-{{else}}
+{{else}} res.render('post', { ...post });
     <p>No comments yet. Be the first to comment!</p>
 {{/if}}
 {{#if loggedIn}}
