@@ -1,7 +1,23 @@
-<h1>Dashboard</h1>
+{{!-- <h1>Dashboard</h1>
 <form id="new-post-form">
   <input type="text" id="post-title" placeholder="Title">
   <textarea id="post-content" placeholder="Content"></textarea>
   <button type="submit">Create Post</button>
 </form>
-<div id="posts-container"></div>
+<div id="posts-container"></div> --}}
+
+<h1>Dashboard</h1>
+<button onclick="location.href='/new-post'">Add New Blog Post</button>
+<h2>Your Blog Posts</h2>
+<ul>
+    {{#each posts}}
+        <li>
+            <h3>{{this.title}}</h3>
+            <p>{{this.summary}}</p>
+            <a href="/edit-post/{{this.id}}">Edit</a>
+            <a href="/delete-post/{{this.id}}">Delete</a>
+        </li>
+    {{else}}
+        <li>No posts found.</li>
+    {{/each}}
+</ul>
