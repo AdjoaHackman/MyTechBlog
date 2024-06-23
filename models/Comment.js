@@ -13,15 +13,16 @@ Comment.init(
       autoIncrement: true,
     },
     dateCreation: {
-      type: DataTypes.DATE,
+      type: DataTypes.DATEONLY,
       allowNull: false,
+      defaultValue: new Date()
     },
     content: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(5000),
         allowNull: false,
       },
     username: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING (1000),
         allowNull: false,
       },
     post_id: {
