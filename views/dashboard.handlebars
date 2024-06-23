@@ -13,6 +13,7 @@
     {{#each posts}}
         <li>
             <h3>{{this.title}}</h3>
+            <p>{{this.username}}</p>
             <p>{{this.summary}}</p>
             <a href="/edit-post/{{this.id}}">Edit</a>
             <a href="/delete-post/{{this.id}}">Delete</a>
