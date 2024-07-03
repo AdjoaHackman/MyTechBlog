@@ -1,12 +1,12 @@
 {{!-- received this code from ChatGPT --}}
 
 <article>
-    <h1>{{title}}</h1>
-    <p>{{content}}</p>
-    <p><small>Posted by {{author}} on {{date}}</small></p>
+    <h1>{{post.title}}</h1>
+    <p>{{post.content}}</p>
+    <p><small>Posted by {{post.username}} on {{post.dateCreation}}</small></p>
 </article>
 <h2>Comments</h2>
-{{#if comments.length res.render('post', { ...post });}}
+{{#if comments.length}}
     {{#each comments}}
         {{ comment}}
     {{/each}}
