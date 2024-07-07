@@ -36,6 +36,13 @@ Post.init(
         key: "id"
       }
     }
+    // comment: {
+    //   type: DataTypes.STRING,
+    //   allowNull: true,
+    //   validate: {
+    //     len: [500]
+    //   }
+    // }
   },
   {
     sequelize,

@@ -34,6 +34,7 @@ router.put('/:id', withAuth, async (req, res) => {
     res.status(200).json(updatedPost);
   } catch (err) {
     res.status(500).json(err);
+    console.log(err);
   }
 });
 
