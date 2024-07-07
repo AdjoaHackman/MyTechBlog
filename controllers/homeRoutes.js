@@ -11,7 +11,8 @@ router.get('/', async (req, res) => {
     const posts = postData.map((project) => project.get({ plain: true }));
     console.log(posts)
     // Pass serialized data into Handlebars.js template
-    res.render('homepage', { posts });
+    res.render('homepage', { posts, loggedIn: req.session.logged_in });
+    console.log(req.session.logged_in);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -28,7 +29,8 @@ router.get('/post/:id', async (req, res) => {
     })
     console.log(post);
     // Pass serialized data into Handlebars.js template
-    res.render('post', { post });
+    res.render('post', { post, loggedIn: req.session.logged_in });
+    console.log(req.session.logged_in)
   } catch (err) {
     res.status(500).json(err);
   }
