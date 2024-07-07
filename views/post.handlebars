@@ -6,10 +6,13 @@
     <p><small>Posted by {{post.username}} on {{post.dateCreation}}</small></p>
 </article>
 <h2>Comments</h2>
-test {{ comments}} test
+{{!-- test {{comments[0]}} test --}}
 {{#if comments.length}}
     {{#each comments}}
-        {{ comment}}
+        {{ content}}
+        {{!-- {{ comment.id}} --}}
+        {{ dateCreation}}
+         {{!-- {{post.dateCreation}} --}}
     {{/each}}
 {{else}}
     <p>No comments yet. Be the first to comment!</p>

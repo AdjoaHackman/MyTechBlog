@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post } = require('../models');
+const { Post, Comment } = require('../models');
 
 router.get('/', async (req, res) => {
   try {
@@ -23,16 +23,30 @@ router.get('/post/:id', async (req, res) => {
     // Get all users, sorted by name
     const postData = await Post.findByPk(req.params.id);
     console.log(req.params);
+    const commentsData = await Comment.findAll({
+      where: {
+        post_id: req.params.id
+      }
+    })
     // Serialize user data so templates can read it
     const post = postData.get({
       plain:true
     })
+    
     console.log(post);
+    console.log(commentsData);
+    // const comments = commentsData.get({
+    //   plain: true
+    // })
+    const comments = commentsData.map(comment => comment.get({ plain: true }))
+    console.log(comments);
     // Pass serialized data into Handlebars.js template
-    res.render('post', { post, loggedIn: req.session.logged_in });
+    res.render('post', { comments, post, loggedIn: req.session.logged_in });
+    // res.render('comments',{ comments, loggedIn: req.session.logged_in });
     console.log(req.session.logged_in)
   } catch (err) {
     res.status(500).json(err);
+    console.log(err);
   }
 });
 
